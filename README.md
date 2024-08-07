@@ -1,8 +1,13 @@
 # MSReact-ObservabilityToSecurity
 
--> Cuidado! Se voce já possui uma conta na Azure esse lab pode aumentar o seu custo, nao faça isso no seu ambiente produtivo nem da Azure nem do Datadog <-
+🚨 Cuidado! Se voce já possui uma conta na Azure esse lab pode aumentar o seu custo, nao faça isso no seu ambiente produtivo nem da Azure nem do Datadog
 
 ## Criando uma conta no Datadog
+
+O Datadog é Saas é entao voce precisa apenas criar uma conta e nao precisa de cartao de credito.
+
+- [Getting Started with Datadog Sites](https://www.datadoghq.com/technical-enablement/sessions/)
+- [Criando uma conta no Datadog](https://us3.datadoghq.com/account/login?redirect=f)
 
 ## Instalando o Datadog agent
 
