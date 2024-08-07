@@ -11,15 +11,14 @@ O Datadog é Saas é entao voce precisa apenas criar uma conta e nao precisa de 
 
 ## Instalando o Datadog agent
 
-## Fazendo o deploy de uma Aplicaçao
+## Fazendo o deploy de uma Aplicação
 Existe um template pronto para utilizarmos não iremos reinventar a roda vamos usar esse mesmo para analisar os eventos nele. 
 
 [Quickstart: Deploy an Azure Kubernetes Service (AKS) cluster using an ARM template](https://learn.microsoft.com/en-us/azure/aks/learn/quick-kubernetes-deploy-rm-template?tabs=azure-cli)
 
 ## Monitorando um Serviço
 
-## Adicionando uma camada de Proteção 
-
+## Adicionando uma camada de Proteção
 
 ## Treinamentos adicionais gratuitos
 - [Foundation Enablement sessions](https://www.datadoghq.com/technical-enablement/sessions/)
