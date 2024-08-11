@@ -21,10 +21,15 @@ Na console do Datadog em Integration > Agent > Kuberenetes tem um exemplo de com
 
 ## Monitorando um Serviço
 
+Agora que já fizemos o deplioy do nosso serviço podemos configurar um monitor.
+
+Você pode começar por aqui Monitors > Templates 
+
 ## Adicionando uma camada de Proteção
 
 Relacionado a segurança, as flags abaixo precisam estar habilitadas. Dessa forma iremos analisar as atividades do cluster Kubernetes.
 
+```
   securityAgent:
     runtime:
       enabled: true
@@ -35,6 +40,7 @@ Relacionado a segurança, as flags abaixo precisam estar habilitadas. Dessa form
       enabled: true
     host:
       enabled: true
+```
 
 ## Treinamentos adicionais gratuitos
 - [Foundation Enablement sessions](https://www.datadoghq.com/technical-enablement/sessions/)
