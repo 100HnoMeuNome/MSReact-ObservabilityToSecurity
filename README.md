@@ -25,7 +25,7 @@ Agora que já fizemos o deplioy do nosso serviço podemos configurar um monitor.
 
 Você pode começar por aqui Monitors > Templates 
 
-## Adicionando uma camada de Proteção
+## Adicionando uma camada de Proteção no AKS
 
 Relacionado a segurança, as flags abaixo precisam estar habilitadas. Dessa forma iremos analisar as atividades do cluster Kubernetes.
 
@@ -40,6 +40,49 @@ Relacionado a segurança, as flags abaixo precisam estar habilitadas. Dessa form
       enabled: true
     host:
       enabled: true
+```
+
+Com essas flags iremos analisar vulnerabilidades no cluster, analisar melhores práticas de segurança.
+
+## Gerando eventos de Segurança no AKS
+
+Vamos criar um arquivo chamado shell-demo.yaml, o documento de referencia esta [aqui](https://kubernetes.io/docs/tasks/debug/debug-application/get-shell-running-container)
+
+```
+apiVersion: v1
+kind: Pod
+metadata:
+  name: shell-demo
+spec:
+  volumes:
+  - name: shared-data
+    emptyDir: {}
+  containers:
+  - name: nginx
+    image: nginx
+    volumeMounts:
+    - name: shared-data
+      mountPath: /usr/share/nginx/html
+  hostNetwork: true
+  dnsPolicy: Default
+```
+
+Depois de criarmos o arquivo precisamos executa-lo e acessar o pod em modo interativo. 
+
+```
+kubectl apply -f shell-demo.yaml
+```
+```
+kubectl exec --stdin --tty shell-demo -- /bin/bash
+```
+Na console do Datadog em Security > Cloud Security Managment > Signals Explorer iremos ver o evento.
+
+![image](https://github.com/user-attachments/assets/8750ab2a-33dc-4832-9eae-5483c76a58a2)
+
+Outro comando que podemos executar é curl no IMDS, ainda dentro do container execute o comando:
+
+```
+curl http://169.254.169.254/metadata/instance/compute?api-version=2021-01-01&format=json
 ```
 
 ## Treinamentos adicionais gratuitos
