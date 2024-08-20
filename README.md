@@ -108,7 +108,7 @@ Na console do Datadog em Security > Cloud Security Management > Signals Explorer
 Outro comando que podemos executar é curl no IMDS, ainda dentro do container execute o comando:
 
 ```
-curl http://169.254.169.254/metadata/instance/compute?api-version=2021-01-01&format=json
+curl http://169.254.169.254/metadata/identity/oauth2/token?api-version=*
 ```
 ## Gerando eventos de Segurança na Aplicação 
 
